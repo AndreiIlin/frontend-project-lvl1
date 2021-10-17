@@ -1,0 +1,8 @@
+name: Node CI
+on: push
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: make lint
+        run: make lint 
