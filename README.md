@@ -3,4 +3,4 @@
 [![Actions Status](https://github.com/AndreiIlin/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/AndreiIlin/frontend-project-lvl1/actions)
 <a href="https://codeclimate.com/github/AndreiIlin/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/5750ec4196541121a5bf/maintainability" /></a>
 [![Linter check](https://github.com/AndreiIlin/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg?branch=main)](https://github.com/AndreiIlin/frontend-project-lvl1/actions/workflows/nodejs.yml)
-https://asciinema.org/a/evZJBf0nanTbZXBXjxjnKuqne
+https://asciinema.org/a/ZijSyGtwdUYNkkDYFojtYaN68
