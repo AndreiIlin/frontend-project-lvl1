@@ -1,13 +1,13 @@
 import readlineSync from 'readline-sync';
 
-export default function source(Question, Randomizer) {
+export default function source(Question, FunctionName) {
   console.log('Welcome to the Brain Games!');
   const Yourname = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${Yourname}!`);
   console.log(`${Question}`);
   let Check = 0;
   for (let i = 0; i < 3; i += 1) {
-    const [FunctionQuestion, RightAnswer] = Randomizer();
+    const [FunctionQuestion, RightAnswer] = FunctionName();
     console.log(`Question: ${FunctionQuestion}`);
     const YourAnswer = readlineSync.question('Your answer: ');
     if (YourAnswer === RightAnswer) {
