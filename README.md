@@ -5,3 +5,4 @@
 [![Linter check](https://github.com/AndreiIlin/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg?branch=main)](https://github.com/AndreiIlin/frontend-project-lvl1/actions/workflows/nodejs.yml)
 https://asciinema.org/a/ZijSyGtwdUYNkkDYFojtYaN68
 https://asciinema.org/a/LIspVLQeonGD1RnEaygVvGA2w
+https://asciinema.org/a/Exd9Yzc3kA2y315vN54no9jiq
