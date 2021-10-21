@@ -19,7 +19,7 @@ function Randomizer() {
   const FirstArr = SetArray(RandomNumber, RandomCount, RandomLength);
   const RightHide = FirstArr[RandomHide];
   FirstArr.splice(RandomHide, 1, '..');
-  const FunctionQuestion = FirstArr;
+  const FunctionQuestion = FirstArr.join(' ');
   const RightAnswer = String(RightHide);
   return [FunctionQuestion, RightAnswer];
 }
