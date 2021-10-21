@@ -1,6 +1,7 @@
-import source from '../index.js';
+import source from "../index.js";
 
-const Question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const Question =
+  'Answer "yes" if given number is prime. Otherwise answer "no".';
 function SetArray(number) {
   const Arr = new Array(number);
   for (let i = 0; i < number; i += 1) {
@@ -13,9 +14,9 @@ function SetArray(number) {
 }
 function Clear(Arr) {
   if (Arr.filter((element) => element !== undefined).length > 2) {
-    return 'no';
+    return "no";
   }
-  return 'yes';
+  return "yes";
 }
 
 function Randomizer() {
