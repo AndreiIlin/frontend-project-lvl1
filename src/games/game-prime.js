@@ -1,31 +1,21 @@
-import source from '../index.js';
+import startGame from '../index.js';
 
-const Question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-function SetArray(number) {
-  const Arr = new Array(number);
-  for (let i = 0; i < number; i += 1) {
-    Arr[i] = i + 1;
-    if (number % Arr[i] !== 0) {
-      Arr.splice(i, 1);
+const isSimpleNum = (number) => {
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
+      return 'no';
     }
   }
-  return Arr;
-}
-function Clear(Arr) {
-  if (Arr.filter((element) => element !== undefined).length > 2) {
-    return 'no';
-  }
   return 'yes';
-}
-
-function Randomizer() {
-  const RandomNumber = Math.floor(Math.random() * 100) + 1;
-  const FunctionQuestion = RandomNumber;
-  const ClearAnswer = SetArray(RandomNumber);
-  const Answer = Clear(ClearAnswer);
-  const RightAnswer = Answer;
-  return [FunctionQuestion, RightAnswer];
-}
-export default function Prime() {
-  source(Question, Randomizer);
-}
+};
+const randomizer = () => {
+  const randomNumber = Math.floor(Math.random() * 100) + 1;
+  const gameQuestion = randomNumber;
+  const correctAnswer = isSimpleNum(randomNumber);
+  return [gameQuestion, correctAnswer];
+};
+const gamePrime = () => {
+  const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  startGame(question, randomizer);
+};
+export default gamePrime;
