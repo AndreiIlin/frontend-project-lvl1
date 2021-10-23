@@ -20,8 +20,8 @@ const randomizer = () => {
   const correctAnswer = String(rightHide);
   return [gameQuestion, correctAnswer];
 };
-const progression = () => {
+const gameProgression = () => {
   const question = 'What number is missing in the progression?';
   startGame(question, randomizer);
 };
-export default progression;
+export default gameProgression;
