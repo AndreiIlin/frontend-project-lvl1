@@ -1,21 +1,16 @@
 import startGame from '../index.js';
 
 const calculate = (num1, num2, symbol) => {
-  let getAnswer = 0;
   switch (symbol) {
     case 0:
-      getAnswer = num1 + num2;
-      break;
+      return num1 + num2;
     case 1:
-      getAnswer = num1 - num2;
-      break;
+      return num1 - num2;
     case 2:
-      getAnswer = num1 * num2;
-      break;
+      return num1 * num2;
     default:
       return null;
   }
-  return getAnswer;
 };
 const randomizer = () => {
   const numberOne = Math.floor(Math.random() * 100) + 1;

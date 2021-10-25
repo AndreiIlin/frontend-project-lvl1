@@ -1,7 +1,7 @@
 import startGame from '../index.js';
 
 const findGCD = (num1, num2) => {
-  while (num2 !== 0) {
+  if (num2 !== 0) {
     return findGCD(num2, num1 % num2);
   }
   return num1;
