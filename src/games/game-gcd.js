@@ -1,4 +1,5 @@
-import startGame from '../index.js';
+import basisOfGame from '../index.js';
+import randomNumber from '../utils/random-number.js';
 
 const findGCD = (num1, num2) => {
   if (num2 !== 0) {
@@ -6,15 +7,16 @@ const findGCD = (num1, num2) => {
   }
   return num1;
 };
-const randomizer = () => {
-  const numberOne = Math.floor(Math.random() * 100) + 1;
-  const numberTwo = Math.floor(Math.random() * 100) + 1;
-  const gameQuestion = `${numberOne} ${numberTwo}`;
+const getGameData = () => {
+  const numberOne = randomNumber(1, 100);
+  const numberTwo = randomNumber(1, 100);
+  const checkQuestion = `${numberOne} ${numberTwo}`;
   const correctAnswer = String(findGCD(numberOne, numberTwo));
-  return [gameQuestion, correctAnswer];
+  return [checkQuestion, correctAnswer];
 };
-const gameGCD = () => {
-  const question = 'Find the greatest common divisor of given numbers.';
-  startGame(question, randomizer);
+const startGameGCD = () => {
+  const numberOfAttempts = 3;
+  const gameQuestion = 'Find the greatest common divisor of given numbers.';
+  basisOfGame(gameQuestion, getGameData, numberOfAttempts);
 };
-export default gameGCD;
+export default startGameGCD;

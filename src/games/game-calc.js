@@ -1,4 +1,5 @@
-import startGame from '../index.js';
+import basisOfGame from '../index.js';
+import randomNumber from '../utils/random-number.js';
 
 const calculate = (num1, num2, symbol) => {
   switch (symbol) {
@@ -12,18 +13,18 @@ const calculate = (num1, num2, symbol) => {
       return null;
   }
 };
-const randomizer = () => {
-  const numberOne = Math.floor(Math.random() * 100) + 1;
-  const numberTwo = Math.floor(Math.random() * 100) + 1;
+const getGameData = () => {
+  const numberOne = randomNumber(1, 100);
+  const numberTwo = randomNumber(1, 100);
   const symbols = ['+', '-', '*'];
-  const chooseSymbol = Math.floor(Math.random() * symbols.length);
-  const randomSymbol = symbols[chooseSymbol];
-  const gameQuestion = `${numberOne} ${randomSymbol} ${numberTwo}`;
+  const chooseSymbol = randomNumber(0, symbols.length);
+  const checkQuestion = `${numberOne} ${symbols[chooseSymbol]} ${numberTwo}`;
   const correctAnswer = String(calculate(numberOne, numberTwo, chooseSymbol));
-  return [gameQuestion, correctAnswer];
+  return [checkQuestion, correctAnswer];
 };
-const gameCalc = () => {
-  const question = 'What is the result of the expression?';
-  startGame(question, randomizer);
+const startGameCalc = () => {
+  const numberOfAttempts = 3;
+  const gameQuestion = 'What is the result of the expression?';
+  basisOfGame(gameQuestion, getGameData, numberOfAttempts);
 };
-export default gameCalc;
+export default startGameCalc;

@@ -1,24 +1,26 @@
-import startGame from '../index.js';
+import basisOfGame from '../index.js';
+import randomNumber from '../utils/random-number.js';
 
 const isSimpleNum = (number) => {
   if (number === 1) {
-    return 'no';
+    return false;
   }
   for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
-const randomizer = () => {
-  const randomNumber = Math.floor(Math.random() * 100) + 1;
-  const gameQuestion = randomNumber;
-  const correctAnswer = isSimpleNum(randomNumber);
-  return [gameQuestion, correctAnswer];
+const getGameData = () => {
+  const maybeSimpleNumber = randomNumber(1, 100);
+  const checkQuestion = maybeSimpleNumber;
+  const correctAnswer = isSimpleNum(maybeSimpleNumber) ? 'yes' : 'no';
+  return [checkQuestion, correctAnswer];
 };
-const gamePrime = () => {
-  const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  startGame(question, randomizer);
+const startGamePrime = () => {
+  const numberOfAttempts = 3;
+  const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  basisOfGame(gameQuestion, getGameData, numberOfAttempts);
 };
-export default gamePrime;
+export default startGamePrime;

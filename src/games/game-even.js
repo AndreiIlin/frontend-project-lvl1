@@ -1,19 +1,16 @@
-import startGame from '../index.js';
+import basisOfGame from '../index.js';
+import randomNumber from '../utils/random-number.js';
 
-const checkEven = (num) => {
-  if (num % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
+const isEven = (number) => number % 2 === 0;
+const getGameData = () => {
+  const anyNumber = randomNumber(1, 100);
+  const checkQuestion = `${anyNumber}`;
+  const correctAnswer = isEven(anyNumber) ? 'yes' : 'no';
+  return [checkQuestion, correctAnswer];
 };
-const randomizer = () => {
-  const number = Math.floor(Math.random() * 100) + 1;
-  const gameQuestion = `${number}`;
-  const correctAnswer = checkEven(number);
-  return [gameQuestion, correctAnswer];
+const startGameEven = () => {
+  const numberOfAttempts = 3;
+  const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
+  basisOfGame(gameQuestion, getGameData, numberOfAttempts);
 };
-const gameEven = () => {
-  const question = 'Answer "yes" if the number is even, otherwise answer "no".';
-  startGame(question, randomizer);
-};
-export default gameEven;
+export default startGameEven;
