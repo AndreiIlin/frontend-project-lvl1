@@ -19,7 +19,7 @@ const getGameData = () => {
   const numberOne = randomNumber(1, 100);
   const numberTwo = randomNumber(1, 100);
   const symbols = ['+', '-', '*'];
-  const chooseSymbol = randomNumber(0, symbols.length);
+  const chooseSymbol = randomNumber(0, symbols.length - 1);
   const checkQuestion = `${numberOne} ${symbols[chooseSymbol]} ${numberTwo}`;
   const correctAnswer = String(calculate(numberOne, numberTwo, chooseSymbol));
   return [checkQuestion, correctAnswer];
