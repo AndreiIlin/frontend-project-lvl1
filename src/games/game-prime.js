@@ -1,8 +1,10 @@
 import basisOfGame from '../index.js';
 import randomNumber from '../utils/random-number.js';
 
-const isSimpleNum = (number) => {
-  if (number === 1) {
+const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const numberOfAttempts = 3;
+const isPrime = (number) => {
+  if (number < 2) {
     return false;
   }
   for (let i = 2; i < number; i += 1) {
@@ -15,12 +17,10 @@ const isSimpleNum = (number) => {
 const getGameData = () => {
   const maybeSimpleNumber = randomNumber(1, 100);
   const checkQuestion = maybeSimpleNumber;
-  const correctAnswer = isSimpleNum(maybeSimpleNumber) ? 'yes' : 'no';
+  const correctAnswer = isPrime(maybeSimpleNumber) ? 'yes' : 'no';
   return [checkQuestion, correctAnswer];
 };
 const startGamePrime = () => {
-  const numberOfAttempts = 3;
-  const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   basisOfGame(gameQuestion, getGameData, numberOfAttempts);
 };
 export default startGamePrime;

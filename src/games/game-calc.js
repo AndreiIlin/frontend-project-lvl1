@@ -1,6 +1,8 @@
 import basisOfGame from '../index.js';
 import randomNumber from '../utils/random-number.js';
 
+const gameQuestion = 'What is the result of the expression?';
+const numberOfAttempts = 3;
 const calculate = (num1, num2, symbol) => {
   switch (symbol) {
     case 0:
@@ -23,8 +25,6 @@ const getGameData = () => {
   return [checkQuestion, correctAnswer];
 };
 const startGameCalc = () => {
-  const numberOfAttempts = 3;
-  const gameQuestion = 'What is the result of the expression?';
   basisOfGame(gameQuestion, getGameData, numberOfAttempts);
 };
 export default startGameCalc;
